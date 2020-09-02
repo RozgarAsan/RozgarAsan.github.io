@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title >Form</title>
+    <title id="sitename1">Form</title>
     <style>
         body
         {
@@ -84,8 +84,8 @@
     </div>
 <br>
     <div class="geeks" id="upperAdd">
-        <img src="uppadd.jpg" >
-    </div>
+      <a href="#" id="uppAddLink">  <img src="uppadd.jpg" >
+   </a> </div>
 
 
     <div class="three">
@@ -95,8 +95,8 @@
     </div>
 
    <div class="geeks1" id="sideAdd">
-        <img src="sideadd.jpg" >
-    </div>
+  <a href="#" id="sideAddLink">      <img src="sideadd.jpg" >
+   </a> </div>
 
 
 </div>
@@ -127,8 +127,7 @@ debugger;
        }
 
        xmlhttp.onreadystatechange = function () {     
-
-		console.log("SDFSDF");	   
+ 
 	  
            if (xmlhttp.readyState == 4) {                   
              var lines = xmlhttp.responseText;    //*here we get all lines from text file*
@@ -152,7 +151,15 @@ document.getElementById('sitetext').innerHTML=lines;
 else if(type==2)
 {
 document.getElementById('sitename').innerHTML=lines;
-//document.getElementById('sitename1').innerHTML=lines;
+document.getElementById('sitename1').innerHTML=lines;
+}
+else if(type=3)
+{
+document.getElementById("uppAddLink").href=lines;
+}
+else if(type=4)
+{
+document.getElementById("sideAddLink").href=lines;
 }
 
 
@@ -165,6 +172,8 @@ document.getElementById('sitename').innerHTML=lines;
 
 getData("maintext.txt",1);
 getData("sitename.txt",2);
+getData("uppAddLink.txt",3);
+getData("sideAddLink.txt",4);
  
 // readTextFile("file:///E:/Jimmy/Static%20Html/input.txt");
 </script>
