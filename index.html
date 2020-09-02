@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Form</title>
+    <title id="sitename1">Form</title>
     <style>
         body
         {
@@ -84,13 +84,13 @@
     </div>
 <br>
     <div class="geeks" id="upperAdd">
-        <img src="images/uppadd.jpg" >
+        <img src="uppadd.jpg" >
     </div>
 
 
     <div class="three">
-        <h4>Hello, EveyOne</h4>
-        <p>his policy applies only to information we collect through the Site or Pure Chat Software and any emails, texts or other electronic communications sent through the Site or Pure Chat Software.
+        <h1 id="sitename">Hello, EveyOne</h1>
+        <p id="sitetext">his policy applies only to information we collect through the Site or Pure Chat Software and any emails, texts or other electronic communications sent through the Site or Pure Chat Software.
             This Privacy Policy is part of, and governed by, our Terms of Service.</p>
     </div>
 
@@ -110,13 +110,13 @@ function checkImage(imageSrc, good, bad) {
 
  function checkAddData()
  {
- checkImage("images/sideadd.jpg", function(){  }, function(){ document.getElementById("upperAdd").style.display = "none"; } );
- checkImage("images/uppadd.jpg", function(){  }, function(){ document.getElementById("sideAdd").style.display = "none"; } );
+ checkImage("sideadd.jpg", function(){  }, function(){ document.getElementById("upperAdd").style.display = "none"; } );
+ checkImage("uppadd.jpg", function(){  }, function(){ document.getElementById("sideAdd").style.display = "none"; } );
  
  }
  checkAddData();
  
-function getData(){       //this will read file and send information to other function
+function getData(file,type){       //this will read file and send information to other function
        var xmlhttp;
 debugger;
        if (window.XMLHttpRequest) {
@@ -133,18 +133,29 @@ debugger;
            if (xmlhttp.readyState == 4) {                   
              var lines = xmlhttp.responseText;    //*here we get all lines from text file*
 
-             intoArray(lines);     //here we call function with parameter "lines*"                   
+             intoArray(lines,type);     //here we call function with parameter "lines*"                   
            }               
        }
 
-       xmlhttp.open("GET", "input.txt", true);
+       xmlhttp.open("GET",file, true);
        xmlhttp.send();    
 }
 
-function intoArray (lines) {
+function intoArray (lines,type) {
    // splitting all text data into array "\n" is splitting data from each new line
    //and saving each new line as each element*
-alert(lines);
+//alert(lines);
+if(type==1)
+{
+document.getElementById('sitetext').innerHTML=lines;
+}
+else if(type==2)
+{
+document.getElementById('sitename').innerHTML=lines;
+document.getElementById('sitename1').innerHTML=lines;
+}
+
+
    <!-- var lineArr = lines.split('\n');  -->
 
    <!-- //just to check if it works output lineArr[index] as below -->
@@ -152,7 +163,8 @@ alert(lines);
    <!-- document.write(lineArr[3]); -->
 } 
 
-getData();
+getData("sitetext.txt",1);
+getData("sitename.txt",2);
  
 // readTextFile("file:///E:/Jimmy/Static%20Html/input.txt");
 </script>
