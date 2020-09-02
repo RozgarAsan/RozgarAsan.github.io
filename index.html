@@ -117,28 +117,28 @@ function checkImage(imageSrc, good, bad) {
  checkAddData();
  
 function getData(){       //this will read file and send information to other function
-       <!-- var xmlhttp; -->
-<!-- debugger; -->
-       <!-- if (window.XMLHttpRequest) { -->
-           <!-- xmlhttp = new XMLHttpRequest();                -->
-       <!-- }            -->
-       <!-- else {                -->
-           <!-- xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");                -->
-       <!-- } -->
+       var xmlhttp;
+debugger;
+       if (window.XMLHttpRequest) {
+           xmlhttp = new XMLHttpRequest();               
+       }           
+       else {               
+           xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");               
+       }
 
-       <!-- xmlhttp.onreadystatechange = function () {      -->
+       xmlhttp.onreadystatechange = function () {     
 
-		<!-- console.log("SDFSDF");	    -->
+		console.log("SDFSDF");	   
 	  
-           <!-- if (xmlhttp.readyState == 4) {                    -->
-             <!-- var lines = xmlhttp.responseText;    //*here we get all lines from text file* -->
+           if (xmlhttp.readyState == 4) {                   
+             var lines = xmlhttp.responseText;    //*here we get all lines from text file*
 
-             <!-- intoArray(lines);     //here we call function with parameter "lines*"                    -->
-           <!-- }                -->
-       <!-- } -->
+             intoArray(lines);     //here we call function with parameter "lines*"                   
+           }               
+       }
 
-       <!-- xmlhttp.open("GET", "input.txt", true); -->
-       <!-- xmlhttp.send();     -->
+       xmlhttp.open("GET", "input.txt", true);
+       xmlhttp.send();    
 }
 
 function intoArray (lines) {
