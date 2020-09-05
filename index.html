@@ -14,11 +14,11 @@
         <script type="text/javascript">
             $(function () {
                 $.get("upAddLink.html", function (data) {
-                    $(data).insertAfter("#upAddLink");
+                    $("#upAddLink").append(data);
                 });
 				
 				 $.get("sideAddLink.html", function (data) {
-                    $(data).insertAfter("#sideAddLink");
+                    $("#sideAddLink").append(data);
                 });
 				
             });
