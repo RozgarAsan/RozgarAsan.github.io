@@ -15,7 +15,7 @@
         <script type="text/javascript">
             $(function () {
                 $.get("banner.html", function (data) {
-                    $("#appendToThis").append(data);
+                    $(data).insertAfter("#appendToThis");
                 });
             });
         </script>
