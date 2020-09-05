@@ -1,0 +1,130 @@
+<html lang="en"><head>
+  <title>Bootstrap Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  </style>
+   <script src="http://code.jquery.com/jquery-1.6.4.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(function () {
+                $.get("banner.html", function (data) {
+                    $("#appendToThis").append(data);
+                });
+            });
+        </script>
+</head>
+<body style="background-color:springgreen">
+<div class="container">
+  <br>
+   <div class="row">
+            <div class="col-lg-12">
+                <img src="siteimage.jpg" class="img-responsive center-block d-block mx-auto" alt="Sample Image">
+       
+            </div>
+        </div>
+   
+  <div class="row">
+  <div class="col-sm-12" >
+      <div  id="upAddLink">Fake Image</div>
+     </div>
+
+  </div>
+  <br>
+  <div class="row">
+    	  
+    <div class="col-sm-8" >
+      <h1 id="sitename">Some tex</h1>
+      <p id="sitetext" >Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <div></div></div>
+	  
+	  <div class="col-sm-4" id="sideAddLink">
+      <div class="">Fake Image</div>
+     </div>
+	  
+  </div>
+<br>
+
+</div>
+
+
+<div id="appendToThis"></div>
+
+
+<script> 
+function getData(file,type){       //this will read file and send information to other function
+       var xmlhttp;
+debugger;
+       if (window.XMLHttpRequest) {
+           xmlhttp = new XMLHttpRequest();               
+       }           
+       else {               
+           xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");               
+       }
+
+       xmlhttp.onreadystatechange = function () {     
+ 
+	  
+           if (xmlhttp.readyState == 4) {                   
+             var lines = xmlhttp.responseText;    //*here we get all lines from text file*
+
+             intoArray(lines,type);     //here we call function with parameter "lines*"                   
+           }               
+       }
+
+       xmlhttp.open("GET",file, true);
+       xmlhttp.send();    
+}
+
+function intoArray (lines,type) {
+   // splitting all text data into array "\n" is splitting data from each new line
+   //and saving each new line as each element*
+//alert(lines);
+if(type==1)
+{
+document.getElementById('sitetext').innerHTML=lines;
+}
+else if(type==2)
+{
+document.getElementById('sitename').innerHTML=lines;
+document.getElementById('sitename1').innerHTML=lines;
+}
+else if(type==3)
+{
+var script = document.createElement("script");
+script.innerHTML = lines;
+document.head.appendChild(script);
+}
+else if(type==4)
+{
+var script = document.createElement("script");
+script.innerHTML = lines;
+document.head.appendChild(script);
+}
+
+
+
+
+   <!-- var lineArr = lines.split('\n');  -->
+
+   <!-- //just to check if it works output lineArr[index] as below -->
+   <!-- document.write(lineArr[2]);          -->
+   <!-- document.write(lineArr[3]); -->
+} 
+
+<!-- getData("maintext.txt",1); -->
+<!-- getData("sitename.txt",2); -->
+<!-- getData("uppAddLink.txt",3); -->
+<!-- getData("sideAddLink.txt",4); -->
+
+ <!-- readTextFile("file:///E:/Jimmy/Static%20Html/input.txt"); -->
+</script>
+
+
+</body></html>
