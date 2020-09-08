@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title class="sitetitlefromfile">XXXXXXXXXXXXXXX</title>
+		<title class="sitenamefromfile">XXXXXXXXXXXXXXX</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -58,7 +58,7 @@
 										<!--<p>Just an incredibly simple responsive site<br />
 										template freebie by <a href="http://html5up.net">HTML5 UP</a>.</p>-->
 									</header>
-									<p class="sitemaintextfromfile">cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</p>
+									<p class="sitemaintextfromfile" id="sitemaintextfromfile">cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</p>
 								</div>
 							</section>
 
@@ -79,8 +79,12 @@
 
 
 <script> 
+
+
 function getData(file,type){       //this will read file and send information to other function
        var xmlhttp;
+	   document.getElementsByClassName('sitemaintextfromfile').innerHTML="SDFSDFSDFSDFSDF";
+
 debugger;
        if (window.XMLHttpRequest) {
            xmlhttp = new XMLHttpRequest();               
@@ -109,15 +113,29 @@ function intoArray (lines,type) {
 //alert(lines);
 if(type==1)
 {
-document.getElementsByClassName('sitemaintextfromfile').innerHTML=lines;
+var elements = document.getElementsByClassName("sitemaintextfromfile");
+    for(var i = elements.length - 1; i >= 0; --i)
+    {
+        elements[i].innerHTML=lines = lines;
+   }   
 }
 else if(type==2)
 {
-document.getElementsByClassName('sitetitlefromfile').innerHTML=lines;
+var elements = document.getElementsByClassName("sitetitlefromfile");
+
+    for(var i = elements.length - 1; i >= 0; --i)
+    {
+        elements[i].innerHTML=lines = lines;
+   }   
 }
 else if(type==3)
 {
-document.getElementsByClassName('sitenamefromfile').innerHTML=lines;
+
+var elements = document.getElementsByClassName("sitenamefromfile");
+    for(var i = elements.length - 1; i >= 0; --i)
+    {
+        elements[i].innerHTML=lines = lines;
+    }   
 }
 
 
@@ -131,7 +149,7 @@ document.getElementsByClassName('sitenamefromfile').innerHTML=lines;
 } 
 
 getData("maintext.txt",1);
-getData("titletext.txt",2);
+getData("article-title.txt",2);
 getData("sitename.txt",3);
 <!-- getData("uppAddLink.txt",3); -->
 <!-- getData("sideAddLink.txt",4); -->
