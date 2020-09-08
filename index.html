@@ -1,66 +1,80 @@
-<html lang="en"><head>
-  <title id="sitename1"></title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-  .fakeimg {
-    height: 200px;
-    background: #aaa;
-  }
-  </style>
-        <script type="text/javascript">
-            $(function () {
-                $.get("upAddLink.html", function (data) {
-                    $("#upAddLink").append(data);
-                });
-				
-				 $.get("sideAddLink.html", function (data) {
-                    $("#sideAddLink").append(data);
-                });
-				
-            });
-        </script>
-		
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title class="sitetitlefromfile">XXXXXXXXXXXXXXX</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
 
-		
-</head>
-<body style="background-color:springgreen">
-<div class="container">
-  <br>
-   <div class="row">
-            <div class="col-lg-12">
-                <img src="siteimage.jpg" class="img-responsive center-block d-block mx-auto" alt="Sample Image">
-       
-            </div>
-        </div>
-   
-  <div class="row">
-  <div class="col-sm-12" >
-      <div  id="upAddLink"></div>
-     </div>
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<!--<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>-->
+					<h1 id="logo"><a href="#" ><span class="sitenamefromfile">XXXXXXXXXXXXXXX</span></a></h1>
+					<!--<p>I got reprogrammed by a rogue AI<br />
+					and now I'm totally cray</p>-->
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="#one" class="active sitetitlefromfile">YYYYYY</a></li>
+						<!--<li><a href="#two">Things I Can Do</a></li>-->
+						<!--<li><a href="#three">A Few Accomplishments</a></li>-->
+						<!--<li><a href="#four">Contact</a></li>-->
+					</ul>
+				</nav>
+				<footer>
+<!--					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+-->
+				</footer>
+			</section>
 
-  </div>
-  <br>
-  <div class="row">
-    	  
-    <div class="col-sm-8" >
-      <h1 id="sitename"></h1>
-      <p id="sitetext"  class="text-justify"></p>
-      <div></div></div>
-	  
-	  <div class="col-sm-4" id="sideAddLink">
-      <div class=""></div>
-     </div>
-	  
-  </div>
-<br>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-</div>
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="image main" data-position="center">
+									<img src="images/banner.jpg" alt="" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h2 class="sitetitlefromfile">YYYYYY</h2>
+										<!--<p>Just an incredibly simple responsive site<br />
+										template freebie by <a href="http://html5up.net">HTML5 UP</a>.</p>-->
+									</header>
+									<p class="sitemaintextfromfile">cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</p>
+								</div>
+							</section>
 
 
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; <span class="sitenamefromfile">  XXXXXXXXXXXXXXX. </span> All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
 
 
 
@@ -95,24 +109,15 @@ function intoArray (lines,type) {
 //alert(lines);
 if(type==1)
 {
-document.getElementById('sitetext').innerHTML=lines;
+document.getElementsByClassName('sitemaintextfromfile').innerHTML=lines;
 }
 else if(type==2)
 {
-document.getElementById('sitename').innerHTML=lines;
-document.getElementById('sitename1').innerHTML=lines;
+document.getElementsByClassName('sitetitlefromfile').innerHTML=lines;
 }
 else if(type==3)
 {
-var script = document.createElement("script");
-script.innerHTML = lines;
-document.head.appendChild(script);
-}
-else if(type==4)
-{
-var script = document.createElement("script");
-script.innerHTML = lines;
-document.head.appendChild(script);
+document.getElementsByClassName('sitenamefromfile').innerHTML=lines;
 }
 
 
@@ -126,7 +131,8 @@ document.head.appendChild(script);
 } 
 
 getData("maintext.txt",1);
-getData("sitename.txt",2);
+getData("titletext.txt",2);
+getData("sitename.txt",3);
 <!-- getData("uppAddLink.txt",3); -->
 <!-- getData("sideAddLink.txt",4); -->
 
@@ -134,4 +140,15 @@ getData("sitename.txt",2);
 </script>
 
 
-</body></html>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
